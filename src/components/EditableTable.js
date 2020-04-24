@@ -82,13 +82,13 @@ class EditableTable extends Component {
                         {
                             title: 'Task status',
                             field: 'status',
-                            lookup: { 1: 'pending', 2: 'ongoing', 3: 'completed' },
+                            lookup: { 'pending': 'pending', 'ongoing': 'ongoing', 'completed': 'completed' },
                         },
                     ]}
                     data={this.state.items}
                     editable={{
                         onRowAdd: (newData) =>
-                            addItem(newData.title).then(() => {
+                            addItem(newData.title, newData.status).then(() => {
                                 this.getAll()
                             }),
                         onRowUpdate: (newData, oldData) =>

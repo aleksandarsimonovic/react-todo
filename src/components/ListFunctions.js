@@ -11,12 +11,13 @@ export const getList = () => {
         })
 };
 
-export const addItem = title => {
+export const addItem = (title, status) => {
     return axios
         .post(
             'http://localhost:3600/tasks',
             {
-                title: title
+                title: title,
+                status: status
             },
             {
                 headers: {'Content-Type': 'application/json'}
